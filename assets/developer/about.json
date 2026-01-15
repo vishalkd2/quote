@@ -1,0 +1,26 @@
+{
+  "name": "Vishal Dubey",
+  "role": "Flutter Developer",
+  "experience": "1.7 years of professional experience",
+  "bio": "I am a passionate Flutter developer skilled in building efficient and user-friendly applications. With strong experience in Flutter, Dart, REST APIs, Provider, GetX, Riverpod, Firebase, and WebSockets, I focus on writing clean, scalable code and delivering pixel-perfect UI designs. I enjoy solving performance challenges, managing app state effectively, and integrating real-time data updates for seamless user experiences. My goal is to build applications that not only perform well but also delight users with intuitive design and reliability.",
+  "skills": [
+    "Flutter",
+    "Dart",
+    "REST APIs",
+    "Firebase",
+    "Provider",
+    "GetX",
+    "Riverpod",
+    "WebSockets",
+    "UI/UX Design",
+    "State Management",
+    "Version Control (Git)"
+  ],
+  "about_app": "This Quotes App is a beautifully designed platform to explore inspiring quotes from famous authors and thinkers. Users can read, save, and share meaningful quotes that bring positivity and motivation to their daily lives. Every morning, the app delivers a special Quote of the Day through smart notifications, helping users start their day with energy and focus. It also offers random quotes and image-based quotes for a richer, more engaging experience. Built using Flutter, the app integrates HTTP APIs, Provider, Local Notifications,Work manager ,and Share Plus for smooth performance and functionality. The UI features elegant animations, gradients, and modern layouts for a premium feel. This app is designed to be a complete daily motivation companion for every user.",
+  "app_version": "v1.0.0",
+  "email": "vishal.kd510@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/vishal-dubey-46b0502b9/",
+  "github": "https://github.com/vishaldubey",
+  "location": "Gurgaon, India",
+  "interests": ["Mobile App Development", "Open Source", "Tech Blogging", "UI Design", "Product Thinking"]
+}
