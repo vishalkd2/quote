@@ -24,10 +24,10 @@ A beautifully designed Flutter application that delivers inspirational quotes, i
 </p>
 
 ## 🎥 App Demo
-[Watch Video](demo/quote.mp4)
+[Watch Video](https://github.com/vishalkd2/quote/releases/download/v1.0.0/quote.mp4)
 
 ## 📦 Download APK
-[Download APK](apk/app-release.apk)
+[Download APK](https://github.com/vishalkd2/quote/releases/download/v1.0.0/app-release.apk)
 
 ## ✨ Features
 
