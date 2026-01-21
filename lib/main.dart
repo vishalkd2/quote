@@ -7,17 +7,17 @@ import 'package:quote/work/quote_worker.dart';
 import 'package:workmanager/workmanager.dart';
 import 'services/notification_service.dart';
 
-void main() async{
+  void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await NotificationService().init(requestPermission: true);
-   await Workmanager().initialize(callbackDispatcher,isInDebugMode: true);
+  // String? payLoad = await NotificationService().getNotificationPayload();
+  // String initialRoute = payLoad == "open_quote" ? '/quoteOfDay' :'/';
+  await Workmanager().initialize(callbackDispatcher,isInDebugMode: true);
   Workmanager().registerOneOffTask(
     "dailyQuoteTaskId_${DateTime.now().millisecondsSinceEpoch}",
     dailyQuoteTask,
     initialDelay: _initialDelay(),
-    constraints: Constraints(
-      networkType: NetworkType.connected,
-    ),
+    constraints: Constraints(networkType: NetworkType.connected),
   );
   await dotenv.load(fileName: ".env");
   runApp(MultiProvider(providers: [
@@ -35,6 +35,7 @@ Duration _initialDelay(){
 }
 
 class MyApp extends StatelessWidget {
+  // final String initialRoute;
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {

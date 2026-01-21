@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quote/core/app_route.dart';
+import 'package:quote/services/notification_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -8,8 +10,7 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
 
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
@@ -44,7 +45,14 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   Future<void> _navigate() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 2));
+
+    final payload = await NotificationService().getNotificationPayload();
+    if(!mounted) return;
+    if(payload=="open_quote"){
+      Navigator.pushReplacementNamed(context, '/quoteOfDay');
+      return;
+    }
 
     final prefs = await SharedPreferences.getInstance();
     final isFirstTime = prefs.getBool('isFirstTime') ?? true;

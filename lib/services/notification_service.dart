@@ -13,15 +13,22 @@ class NotificationService {
     const initializationSettings = InitializationSettings(android: androidSettings);
     await _notificationPlugin.initialize(
       initializationSettings,
-      onDidReceiveNotificationResponse: (response) {
-        if (response.payload == "open_quote") {
-          navigatorKey.currentState?.pushNamed('/quoteOfDay');
-        }
+      onDidReceiveNotificationResponse: (response) async{
+        print("Notification clicked while app is in background or running......................");
+        if (response.payload == "open_quote") {navigatorKey.currentState?.pushNamed('/quoteOfDay');}
       },
     );
     if(requestPermission){
       await _notificationPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()?.requestNotificationsPermission();
     }
+  }
+
+  Future<String?> getNotificationPayload()async{
+    final  NotificationAppLaunchDetails? details = await _notificationPlugin.getNotificationAppLaunchDetails();
+    if(details != null && details.didNotificationLaunchApp){
+      return details.notificationResponse?.payload;
+    }
+    return  null;
   }
 
   Future<void> showQuoteNotification({
@@ -40,12 +47,8 @@ class NotificationService {
           channelDescription: 'Daily quote notifications',
           importance: Importance.max,
           priority: Priority.high,
-          icon: '@drawable/ic_launcher_foreground',
-            color: Color(0xFF764ba2),
+          icon: '@drawable/ic_launcher_foreground',color: Color(0xFF764ba2),
         largeIcon: DrawableResourceAndroidBitmap('ic_launcher_foreground')
-        ),
-      ),
+        )),
       payload: "open_quote",
-    );
-  }
-}
+    );}}
