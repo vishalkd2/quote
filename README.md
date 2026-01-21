@@ -27,7 +27,7 @@ A beautifully designed Flutter application that delivers inspirational quotes, i
 [Watch Video](https://github.com/vishalkd2/quote/releases/download/v1.0.0/quote.mp4)
 
 ## 📦 Download APK
-[Download APK](https://github.com/vishalkd2/quote/releases/download/v1.0.0/app-release.apk)
+[Download APK](https://github.com/vishalkd2/quote/releases/download/v1.1.0/quote.apk)
 
 ## ✨ Features
 
